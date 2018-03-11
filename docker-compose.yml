@@ -1,0 +1,32 @@
+version: "3"
+
+networks: 
+  desenv-network:
+    driver: bridge
+
+services:
+
+  alurabank-api:
+    build: 
+      dockerfile: ./desenv-api.dockerfile
+      context: .
+    image: alurabank-api/node
+    container_name: alurabank-api
+    ports: 
+      - "8180:8180"
+    networks:
+      - desenv-network
+
+  alurabank:
+    build: 
+      dockerfile: ./desenv-alurabank.dockerfile
+      context: .
+    image: alurabank-ts2/node
+    container_name: alurabank
+    ports: 
+      - "8080:3000"
+    networks:
+      - desenv-network
+    depends_on: 
+      - "alurabank-api"
+    

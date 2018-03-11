@@ -1,0 +1,11 @@
+/api/node_modules
+/api/.gitignore
+/api/.git
+/api/.DS_Store
+/api/README.md
+/alurabank/node_modules
+/alurabank/app/js
+/alurabank/.gitignore
+/alurabank/.git
+/alurabank/.DS_Store
+/alurabank/README.md
